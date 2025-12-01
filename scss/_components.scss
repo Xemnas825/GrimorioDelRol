@@ -1,0 +1,163 @@
+.section-wrapper {
+    padding: 2rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.05); // Glass effect
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: $border-radius;
+    overflow: hidden;
+    margin-bottom: 3rem;
+    box-shadow: $shadow;
+    
+    // Mobile: Columna
+    display: flex;
+    flex-direction: column;
+
+    // Tablet: Fila
+    @include tablet {
+        flex-direction: row;
+        align-items: stretch; // Misma altura
+        
+        // Zig-Zag (Pares invertidos)
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+    }
+
+    &__image-container {
+        width: 100%;
+        overflow: hidden;
+
+        @include tablet {
+            width: 45%;
+            min-height: 300px;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+
+        // Efecto zoom al hover
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+    &__content {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include tablet {
+            width: 55%;
+            padding: 3rem;
+        }
+    }
+
+    &__title {
+        color: $color-accent;
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid $color-primary;
+        display: inline-block;
+        padding-bottom: 0.5rem;
+    }
+
+    &__text {
+        color: $color-text-muted;
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+    }
+    
+    &__cta {
+        align-self: flex-start;
+        color: $color-accent;
+        font-weight: bold;
+        border: 1px solid $color-accent;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        transition: all 0.3s;
+        
+        &:hover {
+            background: $color-accent;
+            color: white;
+        }
+    }
+}
+
+// --- CAROUSEL ---
+.carousel {
+    position: relative;
+    max-width: 900px;
+    margin: 3rem auto;
+    border-radius: $border-radius;
+    overflow: hidden;
+    box-shadow: $shadow;
+    border: 2px solid $color-primary;
+
+    &__container {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    &__item {
+        min-width: 100%;
+        
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+
+    &__btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.6);
+        color: white;
+        border: none;
+        padding: 1rem;
+        cursor: pointer;
+        z-index: 10;
+        transition: background 0.3s;
+
+        &:hover {
+            background: $color-accent;
+        }
+
+        &--prev { left: 0; }
+        &--next { right: 0; }
+    }
+    
+    &__indicators {
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+        background: rgba(0,0,0,0.5);
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+    
+    &__dot {
+        width: 10px;
+        height: 10px;
+        background: #ccc;
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
+        
+        &.active {
+            background: $color-accent;
+        }
+    }
+}

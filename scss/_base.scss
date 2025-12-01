@@ -1,0 +1,47 @@
+// scss/_base.scss
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@400;700&family=Caveat:wght@600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-body;
+    // Fondo oscuro global
+    background-color: $color-bg-dark; 
+    color: $color-text; // Texto blanco por defecto
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main { flex: 1; }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+
+h1, h2, h3 {
+    font-family: $font-main;
+}
+
+// === EL FIX IMPORTANTE ===
+// Esto "limpia" los inputs globales para que no molesten a la ficha
+input, textarea, button {
+    font-family: inherit;
+    background: transparent; // Por defecto transparente
+    color: inherit; // Heredan el color del padre (si el padre es ficha blanca, texto negro)
+    border: none;
+}
+
+// Hack para quitar el fondo azul/blanco de autocompletar de Chrome
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px rgba(255, 255, 255, 0) inset !important; // Sombra interior transparente
+    -webkit-text-fill-color: inherit !important; // Mantiene tu color de texto
+    transition: background-color 5000s ease-in-out 0s;
+}
