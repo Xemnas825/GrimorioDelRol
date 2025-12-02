@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Grimorio del Rol - Tu aventura comienza aquí</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="page page--home">
+  <header class="header">
+    <div class="header__container">
+      <div class="header__brand">
+        <a href="index.html" class="header__logo">
+          <span class="header__logo-icon">📖</span>
+          <span class="header__logo-text">Grimorio del Rol</span>
+        </a>
+      </div>
+
+      <button class="header__toggle" id="js-nav-toggle" aria-label="Abrir menú">
+        <span class="header__toggle-bar"></span>
+        <span class="header__toggle-bar"></span>
+        <span class="header__toggle-bar"></span>
+      </button>
+
+      <nav class="header__nav nav" aria-label="Navegación principal">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link nav__link--active">Inicio</a>
+          </li>
+          <li class="nav__item">
+            <a href="personaje.html" class="nav__link">Crear personaje</a>
+          </li>
+          <li class="nav__item">
+            <a href="recursos.html" class="nav__link">Recursos</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="hero">
+      <div class="hero__overlay"></div>
+      <div class="hero__content">
+        <h1 class="hero__title">Grimorio del Rol</h1>
+        <p class="hero__subtitle">
+          Forja tu héroe, descarga campañas épicas y adéntrate en el mundo de Dungeons &amp; Dragons
+        </p>
+        <div class="hero__actions">
+          <a href="personaje.html" class="button button--primary button--large">
+            ⚔️ Crear personaje
+          </a>
+          <a href="recursos.html" class="button button--outline button--large">
+            📜 Explorar recursos
+          </a>
+        </div>
+      </div>
+      <div class="hero__decoration hero__decoration--left">✦</div>
+      <div class="hero__decoration hero__decoration--right">✦</div>
+    </section>
+
+    <section class="section section--dark">
+      <div class="section__container">
+        <header class="section__header">
+          <h2 class="section__title">Tu aventura en tres pasos</h2>
+          <div class="section__divider"></div>
+        </header>
+
+        <div class="section__grid">
+          <article class="card card--feature">
+            <div class="card__icon">🧙‍♂️</div>
+            <h3 class="card__title">Crea tu héroe</h3>
+            <p class="card__text">
+              Elige raza, clase y atributos para dar vida a tu personaje único. Descarga tu ficha lista para jugar.
+            </p>
+          </article>
+
+          <article class="card card--feature">
+            <div class="card__icon">🗺️</div>
+            <h3 class="card__title">Descarga campañas</h3>
+            <p class="card__text">
+              Accede a aventuras listas para usar, desde mazmorras hasta misterios urbanos.
+            </p>
+          </article>
+
+          <article class="card card--feature">
+            <div class="card__icon">🎲</div>
+            <h3 class="card__title">Equipamiento épico</h3>
+            <p class="card__text">
+              Explora dados metálicos, pantallas de DM y miniaturas para tus partidas.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--cta">
+      <div class="section__container section__container--narrow">
+        <h2 class="cta__title">¿Listo para la aventura?</h2>
+        <p class="cta__text">
+          Únete a miles de aventureros y comienza tu leyenda hoy mismo.
+        </p>
+        <a href="personaje.html" class="button button--primary button--large">
+          Empezar ahora
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__container">
+      <p class="footer__text">
+        &copy; 2025 Grimorio del Rol. Proyecto estudiantil de diseño web.
+      </p>
+      <p class="footer__credits">
+        Inspirado por Dungeons &amp; Dragons
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

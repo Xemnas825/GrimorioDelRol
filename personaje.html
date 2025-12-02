@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Crear personaje - Grimorio del Rol</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="page page--character">
+  <header class="header">
+    <div class="header__container">
+      <div class="header__brand">
+        <a href="index.html" class="header__logo">
+          <span class="header__logo-icon">📖</span>
+          <span class="header__logo-text">Grimorio del Rol</span>
+        </a>
+      </div>
+
+      <button class="header__toggle" id="js-nav-toggle" aria-label="Abrir menú">
+        <span class="header__toggle-bar"></span>
+        <span class="header__toggle-bar"></span>
+        <span class="header__toggle-bar"></span>
+      </button>
+
+      <nav class="header__nav nav" aria-label="Navegación principal">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">Inicio</a>
+          </li>
+          <li class="nav__item">
+            <a href="personaje.html" class="nav__link nav__link--active">Crear personaje</a>
+          </li>
+          <li class="nav__item">
+            <a href="recursos.html" class="nav__link">Recursos</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="page-header">
+      <div class="page-header__container">
+        <h1 class="page-header__title">⚔️ Creador de personaje</h1>
+        <p class="page-header__subtitle">
+          Completa la ficha de tu héroe y descárgala para tus aventuras
+        </p>
+        <div class="page-header__divider"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section__container section__container--form">
+        <form class="character-form" id="js-character-form">
+          <div class="character-form__panel">
+            <fieldset class="character-form__group">
+              <legend class="character-form__legend">✨ Identidad</legend>
+
+              <label class="character-form__field">
+                <span class="character-form__label">Nombre del personaje</span>
+                <input class="character-form__input" type="text" name="Nombre" placeholder="Ej: Thorin Escudo de Roble" required>
+              </label>
+
+              <div class="character-form__row">
+                <label class="character-form__field">
+                  <span class="character-form__label">Raza</span>
+                  <select class="character-form__input" name="Raza">
+                    <option>Humano</option>
+                    <option>Elfo</option>
+                    <option>Enano</option>
+                    <option>Mediano</option>
+                    <option>Tiefling</option>
+                    <option>Orco</option>
+                    <option>Gnomo</option>
+                  </select>
+                </label>
+
+                <label class="character-form__field">
+                  <span class="character-form__label">Clase</span>
+                  <select class="character-form__input" name="Clase">
+                    <option>Guerrero</option>
+                    <option>Mago</option>
+                    <option>Pícaro</option>
+                    <option>Clérigo</option>
+                    <option>Bárbaro</option>
+                    <option>Paladín</option>
+                    <option>Bardo</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="character-form__row">
+                <label class="character-form__field">
+                  <span class="character-form__label">Nivel</span>
+                  <input class="character-form__input" type="number" name="Nivel" min="1" max="20" value="1">
+                </label>
+
+                <label class="character-form__field">
+                  <span class="character-form__label">Alineamiento</span>
+                  <select class="character-form__input" name="Alineamiento">
+                    <option>Legal bueno</option>
+                    <option>Neutral bueno</option>
+                    <option>Caótico bueno</option>
+                    <option>Legal neutral</option>
+                    <option>Neutral puro</option>
+                    <option>Caótico neutral</option>
+                    <option>Legal malvado</option>
+                    <option>Neutral malvado</option>
+                    <option>Caótico malvado</option>
+                  </select>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="character-form__group">
+              <legend class="character-form__legend">💪 Atributos</legend>
+
+              <div class="character-form__attributes">
+                <label class="character-form__field character-form__field--attribute">
+                  <span class="character-form__label">Fuerza</span>
+                  <input class="character-form__input character-form__input--attribute" type="number" name="Fuerza" min="1" max="20" value="10">
+                </label>
+
+                <label class="character-form__field character-form__field--attribute">
+                  <span class="character-form__label">Destreza</span>
+                  <input class="character-form__input character-form__input--attribute" type="number" name="Destreza" min="1" max="20" value="10">
+                </label>
+
+                <label class="character-form__field character-form__field--attribute">
+                  <span class="character-form__label">Constitución</span>
+                  <input class="character-form__input character-form__input--attribute" type="number" name="Constitución" min="1" max="20" value="10">
+                </label>
+
+                <label class="character-form__field character-form__field--attribute">
+                  <span class="character-form__label">Inteligencia</span>
+                  <input class="character-form__input character-form__input--attribute" type="number" name="Inteligencia" min="1" max="20" value="10">
+                </label>
+
+                <label class="character-form__field character-form__field--attribute">
+                  <span class="character-form__label">Sabiduría</span>
+                  <input class="character-form__input character-form__input--attribute" type="number" name="Sabiduría" min="1" max="20" value="10">
+                </label>
+
+                <label class="character-form__field character-form__field--attribute">
+                  <span class="character-form__label">Carisma</span>
+                  <input class="character-form__input character-form__input--attribute" type="number" name="Carisma" min="1" max="20" value="10">
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="character-form__group">
+              <legend class="character-form__legend">📖 Historia</legend>
+
+              <label class="character-form__field">
+                <span class="character-form__label">Trasfondo (opcional)</span>
+                <textarea class="character-form__input character-form__input--textarea" name="Trasfondo" rows="5" placeholder="Cuéntanos la historia de tu personaje..."></textarea>
+              </label>
+            </fieldset>
+
+            <button class="button button--primary button--large character-form__submit" type="submit">
+              📥 Descargar ficha de personaje
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__container">
+      <p class="footer__text">
+        &copy; 2025 Grimorio del Rol. Proyecto estudiantil de diseño web.
+      </p>
+      <p class="footer__credits">
+        Inspirado por Dungeons &amp; Dragons
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

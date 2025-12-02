@@ -1,13 +1,4 @@
-// 1. Configuración (Primero siempre)
-@import 'variables';
-@import 'mixins';
-
-// 2. Base
 @import 'base';
- 
-// 3. Componentes y Secciones
-@import 'header';
-@import 'hero';
-@import 'components'; // Aquí van las cards y carrusel
-@import 'forms';
-@import 'footer';
+@import 'layout';
+@import 'components';
+@import 'utilities';
