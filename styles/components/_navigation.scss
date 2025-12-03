@@ -1,0 +1,60 @@
+.nav {
+  &__list {
+    list-style: none;
+    padding: 1rem 0;
+    margin: 0;
+  }
+
+  &__item {
+    border-bottom: 1px solid rgba($color-brown, 0.3);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 0.875rem 1.25rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: rgba($color-gold, 0.1);
+      padding-left: 1.75rem;
+    }
+
+    &--active {
+      background-color: rgba($color-gold, 0.2);
+      color: $color-gold;
+      border-left: 4px solid $color-gold;
+      font-weight: 700;
+    }
+  }
+
+  // --- RESPONSIVE ---
+  @include respond-to('tablet') {
+    &__list {
+      display: flex;
+      padding: 0;
+    }
+
+    &__item {
+      border: none;
+    }
+
+    &__link {
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+
+      &:hover {
+        padding-left: 1rem;
+      }
+
+      &--active {
+        border-left: none;
+        border-bottom: 2px solid $color-gold;
+      }
+    }
+  }
+}

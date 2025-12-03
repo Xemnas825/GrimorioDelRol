@@ -1,0 +1,184 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+// --- Tarjeta Genérica ---
+.card {
+  background: linear-gradient(135deg, $color-bg-dark 0%, $color-bg-card 100%);
+  border: 2px solid rgba($color-brown, 0.4);
+  border-radius: 12px;
+  padding: 1.75rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: $color-gold;
+    box-shadow: 
+      0 8px 24px rgba(0, 0, 0, 0.6),
+      0 0 20px rgba($color-gold, 0.2);
+  }
+
+  &--feature {
+    text-align: center;
+  }
+
+  &__icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.6));
+  }
+
+  &__title {
+    font-size: 1.3rem;
+    color: $color-gold;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.05em;
+  }
+
+  &__text {
+    font-size: 0.95rem;
+    color: $color-gold-dim;
+    line-height: 1.7;
+  }
+}
+
+// --- Tarjeta de Campaña ---
+.campaign-card {
+  background: linear-gradient(135deg, $color-bg-dark 0%, $color-bg-card 100%);
+  border: 2px solid rgba($color-brown, 0.4);
+  border-radius: 12px;
+  padding: 2rem;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: $color-gold;
+    box-shadow: 
+      0 12px 32px rgba(0, 0, 0, 0.7),
+      0 0 30px rgba($color-gold, 0.3);
+  }
+
+  &__badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: linear-gradient(135deg, $color-brown, $color-brown-dark);
+    color: #fff;
+    padding: 0.35rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  &__icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.7));
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    color: $color-gold;
+    margin-bottom: 1rem;
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  &__text {
+    font-size: 0.95rem;
+    color: $color-gold-dim;
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  &__features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+
+    li {
+      background: rgba($color-brown, 0.3);
+      padding: 0.4rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: $color-gold-dim;
+      border: 1px solid rgba($color-brown, 0.5);
+    }
+  }
+}
+
+// --- Tarjeta de Producto ---
+.product-card {
+  background: linear-gradient(135deg, $color-bg-dark 0%, $color-bg-card 100%);
+  border: 2px solid rgba($color-brown, 0.4);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: $color-gold;
+    box-shadow: 
+      0 8px 24px rgba(0, 0, 0, 0.6),
+      0 0 20px rgba($color-gold, 0.2);
+  }
+
+  &__image {
+    font-size: 4rem;
+    text-align: center;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.6));
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__name {
+    font-size: 1.2rem;
+    color: $color-gold;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  &__description {
+    font-size: 0.9rem;
+    color: $color-gold-dim;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  &__price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $color-gold-light;
+    font-family: $font-heading;
+    margin-bottom: 0.5rem;
+  }
+
+  &__button {
+    width: 100%;
+  }
+
+  // --- RESPONSIVE ---
+  @include respond-to('tablet') {
+    &__button {
+      width: auto;
+      align-self: flex-start;
+    }
+  }
+}
+

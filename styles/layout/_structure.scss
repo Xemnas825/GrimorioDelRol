@@ -1,0 +1,164 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins'; // <--- Importante
+
+// Estructura general
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1 0 auto;
+}
+
+// Secciones
+.section {
+  padding: 3rem 1.25rem;
+
+  &--dark {
+    background: linear-gradient(to bottom, #0f0a14, $color-bg-dark);
+    border-top: 1px solid rgba($color-brown, 0.3);
+    border-bottom: 1px solid rgba($color-brown, 0.3);
+  }
+
+  &--cta {
+    background: 
+      linear-gradient(135deg, rgba($color-brown, 0.2) 0%, rgba($color-gold, 0.15) 100%),
+      $color-bg-dark;
+    text-align: center;
+    padding: 4rem 1.25rem;
+    border-top: 2px solid $color-brown;
+    border-bottom: 2px solid $color-brown;
+  }
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    &--narrow {
+      max-width: 700px;
+    }
+
+    &--form {
+      max-width: 800px;
+    }
+  }
+
+  &__header {
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 1.75rem;
+    color: $color-gold;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.05em;
+  }
+
+  &__description {
+    font-size: 0.95rem;
+    color: $color-text-muted;
+    margin-bottom: 0.5rem;
+  }
+
+  &__divider {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, transparent, $color-gold, transparent);
+    margin: 1rem auto 0;
+  }
+
+  &__grid {
+    display: grid;
+    gap: 1.5rem;
+
+    &--campaigns {
+      gap: 2rem;
+    }
+  }
+
+  // --- RESPONSIVE ---
+  @include respond-to('tablet') {
+    padding: 4rem 2rem;
+
+    &--cta {
+      padding: 5rem 2rem;
+    }
+
+    &__title {
+      font-size: 2.25rem;
+    }
+
+    &__grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+
+      &--campaigns {
+        gap: 2.5rem;
+      }
+    }
+  }
+}
+
+// Cabecera de página interna
+.page-header {
+  padding: 2.5rem 1.25rem 1.5rem;
+  text-align: center;
+  background: linear-gradient(to bottom, $color-bg-dark, rgba(26, 20, 32, 0));
+
+  &__container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: 2rem;
+    color: $color-gold;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.05em;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  }
+
+  &__subtitle {
+    font-size: 1rem;
+    color: $color-gold-dim;
+    margin-bottom: 1rem;
+  }
+
+  &__divider {
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, transparent, $color-gold, transparent);
+    margin: 1.5rem auto 0;
+  }
+
+  // --- RESPONSIVE ---
+  @include respond-to('tablet') {
+    padding: 3.5rem 2rem 2rem;
+
+    &__title {
+      font-size: 2.5rem;
+    }
+
+    &__subtitle {
+      font-size: 1.15rem;
+    }
+  }
+}
+
+.shop-grid {
+  display: grid;
+  gap: 1.5rem;
+
+  // --- RESPONSIVE TABLET ---
+  @include respond-to('tablet') {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+
+  // --- RESPONSIVE DESKTOP ---
+  @include respond-to('desktop') {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

@@ -1,0 +1,26 @@
+@import '../abstracts/variables';
+
+.footer {
+  flex-shrink: 0;
+  background: linear-gradient(135deg, $color-bg-dark 0%, #0f0a14 100%);
+  border-top: 2px solid $color-brown;
+  padding: 2rem 1.25rem;
+  text-align: center;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__text {
+    font-size: 0.9rem;
+    color: $color-text-muted;
+    margin-bottom: 0.5rem;
+  }
+
+  &__credits {
+    font-size: 0.85rem;
+    color: $color-brown-light;
+    font-style: italic;
+  }
+}

@@ -1,0 +1,22 @@
+// 1. Abstracts
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+// 2. Base
+@import 'base/reset';
+@import 'base/typography';
+
+// 3. Layout
+@import 'layout/structure'; // Incluye .page, .main, .section, .page-header
+@import 'layout/header';
+@import 'layout/hero';
+@import 'layout/footer';
+
+// 4. Components
+@import 'components/buttons';
+@import 'components/cards'; // Incluye shop-grid
+@import 'components/forms';
+@import 'components/cta';
+
+// 5. Utilities
+@import 'utilities/utilities';

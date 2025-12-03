@@ -1,0 +1,16 @@
+@import '../abstracts/variables';
+
+.cta {
+  &__title {
+    font-size: 2rem;
+    color: $color-gold;
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+  }
+
+  &__text {
+    font-size: 1.1rem;
+    color: $color-gold-dim;
+    margin-bottom: 2rem;
+  }
+}

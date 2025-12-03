@@ -1,0 +1,104 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.header {
+  background: linear-gradient(135deg, $color-bg-dark 0%, $color-bg-card 100%);
+  border-bottom: 2px solid $color-brown;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__brand {
+    font-size: 1.1rem;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: $color-gold;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      color: $color-gold-light;
+    }
+  }
+
+  &__logo-icon {
+    font-size: 1.5rem;
+  }
+
+  &__toggle {
+    background: none;
+    border: 2px solid $color-gold;
+    padding: 0.5rem;
+    border-radius: 6px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    transition: border-color 0.3s ease;
+
+    &:hover {
+      border-color: $color-gold-light;
+    }
+  }
+
+  &__toggle-bar {
+    width: 24px;
+    height: 2px;
+    background-color: $color-gold;
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+  }
+
+  &__nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, $color-bg-dark 0%, $color-bg-card 100%);
+    border-bottom: 2px solid $color-brown;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+  }
+
+  &__nav--open {
+    display: block;
+  }
+
+  // --- RESPONSIVE ---
+  @include respond-to('tablet') {
+    &__container {
+      padding: 1.25rem 2rem;
+    }
+
+    &__toggle {
+      display: none;
+    }
+
+    &__nav {
+      display: block;
+      position: static;
+      background: none;
+      border: none;
+      box-shadow: none;
+    }
+  }
+}
+
